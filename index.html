@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Calculadora de Disparo Triplo</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+  <h1 style="text-align:center">Calculadora de poder do Disparo Triplo</h1>
+  <div class="columns" style="background:#f3f3f3;padding: 15px 5px; margin-bottom: 35px; box-sizing:border-box">
+    <table class="columnLeft" margin="auto">
+      <tr>
+        <td width="50%">FOR:</td>
+        <td width="50%"><input type="text" id="for" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">AGI:</td>
+        <td width="50%"><input type="text" id="agi" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">DES:</td>
+        <td width="50%"><input type="text" id="des" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">VIT:</td>
+        <td width="50%"><input type="text" id="vit" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">INT:</td>
+        <td width="50%"><input type="text" id="int" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">SOR:</td>
+        <td width="50%"><input type="text" id="sor" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">ASPD: <a href="https://calc.irowiki.org/"><img src="https://i.imgur.com/ziCY771.png" title="Calcule sua ASPD usando este link" width="10" height="10"></a></td>
+        <td width="50%"><input type="text" id="aspd" value="193"></td>
+      </tr>
+      <tr>
+        <td width="50%">Nível do personagem:</td>
+        <td width="50%"><input type="text" id="nivelPersonagem" value="175"></td>
+      </tr>
+    </table>
+    <table class="columnRight" margin="auto" bgcolor="#f3f3f3">
+      <tr>
+        <td width="50%">Propriedade do ataque:</td>
+        <td width="50%">
+          <select id="propriedadeAtaque">
+            <option value="0">Neutro</option>
+            <option value="1">Agua</option>
+            <option value="2">Terra</option>
+            <option value="3">Fogo</option>
+            <option value="4">Vento</option>
+            <option value="5">Veneno</option>
+            <option value="6">Sagrado</option>
+            <option value="7">Sombrio</option>
+            <option value="8">Fantasma</option>
+            <option value="9">Maldito</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Propriedade do monstro:</td>
+        <td width="50%">
+          <select id="propriedadeMonstro">
+            <option value="00">Neutro 1</option>
+            <option value="01">Neutro 2</option>
+            <option value="02">Neutro 3</option>
+            <option value="03">Neutro 4</option>
+            <option value="10">Fogo 1</option>
+            <option value="11">Fogo 2</option>
+            <option value="12">Fogo 3</option>
+            <option value="13">Fogo 4</option>
+            <option value="20">Vento 1</option>
+            <option value="21">Vento 2</option>
+            <option value="22">Vento 3</option>
+            <option value="23">Vento 4</option>
+            <option value="30">Terra 1</option>
+            <option value="31">Terra 2</option>
+            <option value="32">Terra 3</option>
+            <option value="33">Terra 4</option>
+            <option value="40">Água 1</option>
+            <option value="41">Água 2</option>
+            <option value="42">Água 3</option>
+            <option value="43">Água 4</option>
+            <option value="50">Sagrado 1</option>
+            <option value="51">Sagrado 2</option>
+            <option value="52">Sagrado 3</option>
+            <option value="53">Sagrado 4</option>
+            <option value="60">Sombrio 1</option>
+            <option value="61">Sombrio 2</option>
+            <option value="62">Sombrio 3</option>
+            <option value="63">Sombrio 4</option>
+            <option value="70">Maldito 1</option>
+            <option value="71">Maldito 2</option>
+            <option value="72">Maldito 3</option>
+            <option value="73">Maldito 4</option>
+            <option value="80">Veneno 1</option>
+            <option value="81">Veneno 2</option>
+            <option value="82">Veneno 3</option>
+            <option value="83">Veneno 4</option>
+            <option value="90">Fantasma 1</option>
+            <option value="91">Fantasma 2</option>
+            <option value="92">Fantasma 3</option>
+            <option value="93">Fantasma 4</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Defesa do monstro:</td>
+        <td width="50%"><input type="text" id="hardDEF" value="1"></td>
+      </tr>
+      <tr>
+        <td width="50%">Tamanho do monstro:</td>
+        <td width="50%">
+          <select id="tamanho">
+            <option value="1">Pequeno</option>
+            <option value="1">Médio</option>
+            <option value="0.75">Grande</option>
+          </select>
+        </td>
+      </tr>
+      </table>
+    </div>
+
+
+
+    <div class="columns toHide">
+      <div class="columnLeft">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Cabeça [topo]</th>
+            <th width="25%"><img id="imagemTopo" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="refinoItemTopo" style="width:20%;margin-right:1%">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+                <option value="7">+7</option>
+                <option value="8">+8</option>
+                <option value="9">+9</option>
+                <option value="10">+10</option>
+                <option value="11">+11</option>
+                <option value="12">+12</option>
+                <option value="13">+13</option>
+                <option value="14">+14</option>
+                <option value="15">+15</option>
+                <option value="16">+16</option>
+                <option value="17">+17</option>
+                <option value="18">+18</option>
+                <option value="19">+19</option>
+                <option value="20">+20</option>
+              </select>
+              <select autocomplete="off" id="itemTopo" style="width:40%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="19296">Chapéu Chique com Pena [1]</option>
+                <option value="19019">Coroa da Rainha de Copas [1]</option>
+                <option value="19263">Elmo de Xogunato [1]</option>
+                <option value="19111a">Olho da Cecil [1]</option>
+                <option value="19111b">Olho da Cecil [1] - Ativado</option>
+                <option value="19379">Quepe do General [1]</option>
+                <option value="18975">Memorável Artifício das Sombras [1] (IM5)</option>
+                <option value="19409">Pluma Negra</option>
+              </select>
+              <select autocomplete="off" id="cartaTopo" style="width:35%">
+                <option value="">Nenhum</option>
+                <option value="4403">Carta Kiel-D-01</option>
+                <option value="4529">Carta Celacanto Violento</option>
+                <option value="4506">Carta Dolomedes</option>
+                <option value="4458">Carta Duneyrr</option>
+                <option value="27396">Carta Isaac</option>
+                <option value="4468">Carta Pinguicula Sombria</option>
+                <option value="4922">Essência de Morroc DES3</option>
+                <option value="4916">Essência de Morroc AGI3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemAConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemAPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemAIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemAAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemAAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemADanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemADestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemAAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemAInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="columnRight">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Cabeça [meio]</th>
+            <th width="25%"><img id="imagemMeio" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="itemMeio" style="width:62%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="18912">Item qualquer com slot</option>
+                <option value="19495">Asinhas Discretas [1]</option>
+                <option value="18823">Diadema do Grifo</option>
+                <option value="19138">Diadema do Serafim</option>
+                <option value="410026">Herança Real [1]</option>
+                <option value="5325">Óculos Biônicos</option>
+                <option value="18813">Óculos Retrofuturistas</option>
+                <option value="19452">Ornamento Divino [1]</option>
+                <option value="19444">Tapa-Olho Cósmico [1]</option>
+              </select>
+              <select autocomplete="off" id="cartaMeio" style="width:35%">
+                <option value="">Nenhum</option>
+                <option value="4403">Carta Kiel-D-01</option>
+                <option value="4529">Carta Celacanto Violento</option>
+                <option value="4506">Carta Dolomedes</option>
+                <option value="4458">Carta Duneyrr</option>
+                <option value="27396">Carta Isaac</option>
+                <option value="4143">Carta Orc Herói</option>
+                <option value="4468">Carta Pinguicula Sombria</option>
+                <option value="4922">Essência de Morroc DES3</option>
+                <option value="4916">Essência de Morroc AGI3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemBConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemBAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemBDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemBDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemBAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemBInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="columns toHide">
+      <div class="columnLeft">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Cabeça [baixo]</th>
+            <th width="25%"><img id="imagemBaixo" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="itemBaixo" style="width:97%">
+                <option value="">Nenhum</option>
+                <option value="18844">Balão de Pouring Natalino</option>
+                <option value="19101">Familiar de Combate</option>
+                <option value="19274">Fone Descolado</option>
+                <option value="19268">Hálito de Verme com Rosto</option>
+                <option value="5361">Máscara de Fugitivo</option>
+                <option value="420028">Ombreiras da Glória</option>
+                <option value="19318">Rosário da Guarda Real</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemCConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemCAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemCDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemCDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemCAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemCInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="columnRight">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Armadura</th>
+            <th width="25%"><img id="imagemArmadura" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="refinoItemArmadura" style="width:20%;margin-right:1%">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+                <option value="7">+7</option>
+                <option value="8">+8</option>
+                <option value="9">+9</option>
+                <option value="10">+10</option>
+                <option value="11">+11</option>
+                <option value="12">+12</option>
+                <option value="13">+13</option>
+                <option value="14">+14</option>
+                <option value="15">+15</option>
+                <option value="16">+16</option>
+                <option value="17">+17</option>
+                <option value="18">+18</option>
+                <option value="19">+19</option>
+                <option value="20">+20</option>
+              </select>
+              <select autocomplete="off" id="itemArmadura" style="width:40%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="15272">Armadura da Khalitzburg [1]</option>
+                <option value="2375">Armadura de Diabolus [1]</option>
+                <option value="15407">Armadura do Cavaleiro Branco [1]</option>
+                <option value="15240">Armadura do Dragão Vermelho [1]</option>
+                <option value="15128">Colete E.X.C. [3x A-ATQ]</option>
+                <option value="15283">Couraça de Senshi [1]</option>
+                <option value="19048">Traje de Luta Jogos Vorags [1]</option>
+                <option value="15097a">Traje Heroico da Ocultação [1]</option>
+                <option value="15097b">Traje Heroico da Ocultação [1] - Ativo</option>
+                <option value="15254">Vestido Abissal [1]</option>
+              </select>
+              <select autocomplete="off" id="cartaArmadura" style="width:35%">
+                <option value="">Nenhum</option>
+                <option value="4426">Carta Byorgue</option>
+                <option value="4337">Carta Porcellio</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemDConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemDAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemDDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemDDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemDAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemDInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="columns toHide">
+      <div class="columnLeft">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Arco</th>
+            <th width="25%"><img id="imagemArco" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="refinoItemArco" style="width:20%;margin-right:1%">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+                <option value="7">+7</option>
+                <option value="8">+8</option>
+                <option value="9">+9</option>
+                <option value="10">+10</option>
+                <option value="11">+11</option>
+                <option value="12">+12</option>
+                <option value="13">+13</option>
+                <option value="14">+14</option>
+                <option value="15">+15</option>
+                <option value="16">+16</option>
+                <option value="17">+17</option>
+                <option value="18">+18</option>
+                <option value="19">+19</option>
+                <option value="20">+20</option>
+              </select>
+              <select autocomplete="off" id="itemArco" style="width:76%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="18125">Arco Demoníaco [2]</option>
+                <option value="18170">Arco Ancestral [2]</option>
+                <option value="18130">Arco Rubi [2]</option>
+                <option value="18164">Balista Ancestral [2]</option>
+                <option value="18115">Arco de Orc [1]</option>
+                <option value="18109">Catapulta [2]</option>
+                <option value="1730">Arco Incendiário [1]</option>
+                <option value="1731">Arco Glacial [1]</option>
+                <option value="1732">Arco da Terra [1]</option>
+                <option value="1733">Arco Vendaval [1]</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="cartaArco1" style="width:48%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="4094">Carta Esqueleto Arqueiro</option>
+                <option value="4608">Carta Cavaleiro Branco</option>
+                <option value="4140">Carta Cavaleiro do Abismo</option>
+                <option value="4407">Carta Valkyrie Randgris</option>
+                <option value="4305">Carta General Tartaruga</option>
+                <option value="4399">Carta Memória de Thanatos</option>
+              </select>
+              <select autocomplete="off" id="cartaArco2" style="width:48%">
+                <option value="">Nenhum</option>
+                <option value="4094">Carta Esqueleto Arqueiro</option>
+                <option value="4608">Carta Cavaleiro Branco</option>
+                <option value="4140">Carta Cavaleiro do Abismo</option>
+                <option value="4407">Carta Valkyrie Randgris</option>
+                <option value="4305">Carta General Tartaruga</option>
+                <option value="4137">Carta Drake</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemEConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque <a href="http://browiki.org/wiki/Refinamento#Refinando" target="_blank"><img src='https://i.imgur.com/ziCY771.png' title="Incluindo bônus de ATQ por refino. Clique para saber mais." width='10' height='10'></a></td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemEAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque de equipamento</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemEAtaqueEquipamento"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da flecha</td>
+            <td><input type="number" autocomplete="off" class="numero" id="flechaAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemEDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemEDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemEAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemEInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="columns toHide">
+      <div class="columnLeft">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Capa</th>
+            <th width="25%"><img id="imagemCapa" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="refinoItemCapa" style="width:20%;margin-right:1%%">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+                <option value="7">+7</option>
+                <option value="8">+8</option>
+                <option value="9">+9</option>
+                <option value="10">+10</option>
+                <option value="11">+11</option>
+                <option value="12">+12</option>
+                <option value="13">+13</option>
+                <option value="14">+14</option>
+                <option value="15">+15</option>
+                <option value="16">+16</option>
+                <option value="17">+17</option>
+                <option value="18">+18</option>
+                <option value="19">+19</option>
+                <option value="20">+20</option>
+              </select>
+              <select autocomplete="off" id="itemCapa" style="width:40%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="2525">Capa do Marquês [1]</option>
+                <option value="2589a">Asas de Arcanjo Caído [1] (Mira 4/2/1)</option>
+                <option value="2589b">Asas de Arcanjo Caído [1] (Lutador 6/5/5)</option>
+                <option value="480025">Manto do Barão [1]</option>
+                <option value="20973">Manto dos Espíritos [1]</option>
+                <option value="480081">Manto Do Flamingo Negro [1]</option>
+                <option value="20967">Manto Temporal DES [1]</option>
+                <option value="20963">Manto Temporal FOR [1]</option>
+                <option value="20773">Motor E.X.C. (3x A-ATQ)</option>
+                <option value="2576">Mochila da Aventura [1]</option>
+                <option value="20799">Toalha do Mochileiro [1]</option>
+                <option value="20718a">Pele da Rainha Verme [1] (Des 4/4, Super Des)</option>
+                <option value="20718b">Pele da Rainha Verme [1] (Agi 4/4, Super Agi)</option>
+              </select>
+              <select autocomplete="off" id="cartaCapa" style="width:35%">
+                <option value="">Nenhum</option>
+                <option value="4593">Carta Menblatt</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemFConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemFAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemFDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemFDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemFAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemFInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="columnRight">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Calçados</th>
+            <th width="25%"><img id="imagemSapatos" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3">
+              <select autocomplete="off" id="refinoItemSapatos" style="width:20%;margin-right:1%">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+                <option value="7">+7</option>
+                <option value="8">+8</option>
+                <option value="9">+9</option>
+                <option value="10">+10</option>
+                <option value="11">+11</option>
+                <option value="12">+12</option>
+                <option value="13">+13</option>
+                <option value="14">+14</option>
+                <option value="15">+15</option>
+                <option value="16">+16</option>
+                <option value="17">+17</option>
+                <option value="18">+18</option>
+                <option value="19">+19</option>
+                <option value="20">+20</option>
+              </select>
+              <select autocomplete="off" id="itemSapatos" style="width:76%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="22004a">Botas Temporais DES [Mira Apurada 4]</option>
+                <option value="22004e">Botas Temporais DES [Mira Apurada 4, Ânimo]</option>
+                <option value="22004b">Botas Temporais DES [Mira Apurada 4, Instinto] - Ativado</option>
+                <option value="22004c">Botas Temporais DES [Espírito Lutador 7]</option>
+                <option value="22004f">Botas Temporais DES [Espírito Lutador 7, Ânimo]</option>
+                <option value="22004d">Botas Temporais DES [Espírito Lutador 7, Instinto] - Ativado</option>
+                <option value="22172">Botas Aladas</option>
+                <option value="2433">Botas de Diabolus [1]</option>
+                <option value="22101a">Botas do ArchAngeling [Gema de Escorpião]</option>
+                <option value="22101b">Botas do ArchAngeling [Gema de Leão]</option>
+                <option value="22071">Salto Alto Elegante [Carta Amon Ra]</option>
+                <option value="470075">Sandálias Antigas [1]</option>
+                <option value="470056">Sapatos do Perseguidor</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemGConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemGAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemGDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemGDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemGAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemGInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="columns toHide">
+      <div class="columnLeft">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Acessório 1</th>
+            <th width="25%"><img id="imagemAcessorio1" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="itemAcessorio1" style="width:62%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="28552">Anel da Serpe Dupla [1]</option>
+                <option value="32205">Anel de Esmeralda [1]</option>
+                <option value="32258">Anel de Júpiter [1]</option>
+                <option value="490068">Anel de Vênus [1]</option>
+                <option value="28379">Anel Sombrio [1] - Ativado</option>
+                <option value="28594">Anel Temporal [1]</option>
+                <option value="28575">Bugiganga de Verus [1]</option>
+                <option value="490096">Joia do Renegado [1]</option>
+                <option value="28438">Pó de Fada [1]</option>
+                <option value="28411">Brincos de Esmeralda [1]</option>
+                <option value="28492a">Diário do Renegado [1]</option>
+                <option value="28492b">Diário do Renegado [1] - Força Violentíssima ativada</option>
+                <option value="28531">Luvas do Vigor [1]</option>
+              </select>
+              <select autocomplete="off" id="cartaAcessorio1" style="width:35%">
+                <option value="">Nenhum</option>
+                <option value="4145">Carta Belzebu</option>
+                <option value="4486">Carta Belzebu Selada</option>
+                <option value="4508">Carta Scaraba Dourado</option>
+                <option value="27163">Carta Verme com Rosto</option>
+                <option value="27165">Carta Verme Sombrio com Rosto</option>
+                <option value="4064">Carta Zerom</option>
+                <option value="4916">Essência de Morroc AGI3</option>
+                <option value="4922">Essência de Morroc DES3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemHConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemHAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemHDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemHDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemHAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemHInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="columnRight">
+        <table cellspacing="0" cellpadding="5">
+          <tr class="alwaysShow">
+            <th width="25%">&nbsp;</th>
+            <th>Acessório 2</th>
+            <th width="25%"><img id="imagemAcessorio2" src="https://i.imgur.com/OWGO9bw.png" width="24" height="24"></th>
+          </tr>
+          <tr class="alwaysShow">
+            <td colspan="3" align="center">
+              <select autocomplete="off" id="itemAcessorio2" style="width:62%;margin-right:1%">
+                <option value="">Nenhum</option>
+                <option value="32205">Anel de Esmeralda [1]</option>
+                <option value="490068">Anel de Vênus [1]</option>
+                <option value="28594">Anel Temporal [1]</option>
+                <option value="28575">Bugiganga de Verus [1]</option>
+                <option value="490096">Joia do Renegado [1]</option>
+                <option value="28438">Pó de Fada [1]</option>
+                <option value="28411">Brincos de Esmeralda [1]</option>
+                <option value="28492a">Diário do Renegado [1]</option>
+                <option value="28492b">Diário do Renegado [1] - Força Violentíssima ativada</option>
+                <option value="28531">Luvas do Vigor [1]</option>
+                <option value="28565">Máscara de Oni [1]</option>
+              </select>
+              <select autocomplete="off" id="cartaAcessorio2" style="width:35%">
+                <option value="">Nenhum</option>
+                <option value="4145">Carta Belzebu</option>
+                <option value="4486">Carta Belzebu Selada</option>
+                <option value="4508">Carta Scaraba Dourado</option>
+                <option value="27163">Carta Verme com Rosto</option>
+                <option value="27165">Carta Verme Sombrio com Rosto</option>
+                <option value="4064">Carta Zerom</option>
+                <option value="4916">Essência de Morroc AGI3</option>
+                <option value="4922">Essência de Morroc DES3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="75%" colspan="2">Redução de conjuração variável <img src='https://i.imgur.com/ziCY771.png' title="Caso o item aumente a conjuração, insira um valor negativo.
+Ex: Diadema do Serafim = -25" width='10' height='10'></td>
+            <td width="25%"><input type="number" autocomplete="off" class="numero porcentagem" id="itemIConjuracaoVariavel"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Redução de pós conjuração</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIPosConjuracao"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Defesa ignorada</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIIgnorarDefesa"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemIAtaque"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Ataque da arma %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIAtaqueArmaPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano físico %</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDanoFisico"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano contra chefes</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDanoMVP"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano a distância</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDanoDistancia"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano Disparo Triplo</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDisparoTriploPorcentagem"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por raça</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDanoRacial"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por propriedade</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDanoPropriedade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Dano por tamanho</td>
+            <td><input type="number" autocomplete="off" class="numero porcentagem" id="itemIDanoTamanho"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Destreza</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemIDestreza"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Agilidade</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemIAgilidade"></td>
+          </tr>
+          <tr>
+            <td colspan="2">Inteligência</td>
+            <td><input type="number" autocomplete="off" class="numero" id="itemIInteligencia"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <input type="button" id="calcular" value="calcular">
+  </div>
+
+
+    <script type="text/javascript">//<![CDATA[
+
+
+
+  //]]></script>
+
+  <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
